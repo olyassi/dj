@@ -1,0 +1,74 @@
+<html lang="en">
+{% load staticfiles %}
+<head>
+  <title>CRISPR-Cas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/ind.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width:100%;
+      height: 100%;
+  }
+  </style>
+</head>
+<body>
+{% if latest_post_list %}
+    <ul>
+    {% for post in latest_post_list %}
+        <li><a href="/polls/{{ post.id }}/">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts</p>
+{% endif %}
+<div class="container">
+  <h1>CRISPR-Cas9</h1>
+  <p>CRISPR-Cas9 system from bacteria Flexibacter roseolus</p>
+  <h2></h2>
+  <button type="button" class="btn btn-outline-success">Cas9 Nuclease</button>
+  <button type="button" class="btn btn-outline-info">FrCas9</button>
+</div>
+<div class="container mt-3">
+
+<h2></h2>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://naked-science.ru/sites/default/files/field/image/art-of-the-cell-crispr-cas9-in-complex-with-guide-rna-and-target-dna.jpg"  width="900" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="http://www.pbs.org/wgbh/nova/next/wp-content/uploads/2014/07/dna-repair-machinery.jpg"  width="900" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i2.wp.com/www.artofthecell.com/wp-content/uploads/2014/10/Art-of-the-Cell-RNA-Polymerase.jpg?fit=1920%2C1080&ssl=1"  width="900" height="500">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+</div>
+
+</body>
+</html>
